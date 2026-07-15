@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const cors = require('cors');
 const multer = require('multer');
 
 const app = express();
@@ -35,6 +36,7 @@ const upload = multer({
   },
 });
 
+app.use(cors());
 app.use(express.static(__dirname));
 
 app.post('/upload', upload.single('video'), (req, res) => {

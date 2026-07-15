@@ -81,6 +81,7 @@
   </div>
 
   <script>
+    const uploadUrl = 'https://krakenonastick-github-io.onrender.com';
     const uploadButton = document.getElementById('upload-button');
     const fileInput = document.getElementById('video-upload');
     const statusEl = document.getElementById('upload-status');
@@ -111,8 +112,7 @@
       showStatus('Uploading your file...', false);
 
       try {
-        const response = await fetch('/upload', {
-          method: 'POST',
+        const response = await fetch(uploadUrl, {
           body: formData,
         });
 
